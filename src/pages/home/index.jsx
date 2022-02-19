@@ -1,5 +1,6 @@
 import React, {useEffect,useState} from 'react'
 import PokemonCard from '../../components/pokemon'
+import { Link } from 'react-router-dom'
 
 function Home() {
     const [pokemons, setPokemons] = useState([])
@@ -16,8 +17,11 @@ function Home() {
           setnext(data.next)
           setPrev(data.previous !== null ? data.previous : "")
           data.results.forEach(async v => {
+            let arr=[]
             let results = await fetch(v.url);
-              let json= await results.json();    
+              let json= await results.json();  
+           
+            
                 let pokemon = {
                   id: json.id,
                   name: json.name,
@@ -51,17 +55,22 @@ function Home() {
             
           <form className="form-inline">
       <input className="form-control " type="search" placeholder="Search" onChange={handleChange} />
+      <Link style={{textDecoration:"none"}} to="contact"><p className='ml-5 mr-5 mt-2 font-weight-bold'>SUSCRIBETE</p></Link>
     </form>
+
         </nav>
+
+
+
         <div className="d-flex justify-content-center">
         { prev !==""? <button type="button" className="btn btn-primary m-2" onClick={()=>{ 
           setPokemons([])
           setpokeFilt([])
-          seturl(prev)}}>prev</button>:""}
+          seturl(prev)}}>PREV</button>:""}
         <button  type="button" className="btn btn-primary m-2" onClick={()=>{ 
           setPokemons([])
           setpokeFilt([])
-          seturl(next)}}>next</button>
+          seturl(next)}}>NEXT</button>
 
         </div>
       

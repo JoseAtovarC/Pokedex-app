@@ -17,7 +17,7 @@ function PokemonCard({ pokes }) {
    
     <h5 className="card-text font-weight-bold ">{pokes.name}</h5>
      
-        {pokes.types[0].map((t,i)=>{ return <p key={i} className='card-text'>{t.type.name}</p>})}
+        {pokes.types[0].map((t,i)=>{ return <p key={i} className='card-text'>{t.type.name.toUpperCase()}</p>})}
         <span className='card-text text-warning'>{pokes.id}</span>
        
   </div>

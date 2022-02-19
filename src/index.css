@@ -8,9 +8,21 @@ body {
   
 }
 
+@font-face {
+  font-family: "shizuru";
+  src: url(./assets/fonts/PokemonHollow.ttf);
+}
+@font-face {
+  font-family: "poke";
+  src: url(./assets/fonts/PokemonSolid.ttf);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
+h1, h2 , h3, h5{
+  font-family: "shizuru";
+}
 
